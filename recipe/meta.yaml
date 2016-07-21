@@ -1,16 +1,14 @@
-{% set version = "3.2.3" %}
-
 package:
   name: yt
-  version: {{ version }}
+  version: 3.3dev
 
 source:
-  fn: yt-{{ version }}.tar.gz
-  url: https://pypi.python.org/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 4d6ccf345d9fab965335c9faf8708c7eea79366b81d77f0f302808be3e82c0ed
+  url: https://bitbucket.org/yt_analysis/yt/get/dda861e88caf.zip
+  sha256: 1b6686938e06dc9346de84e90ff5aa63a4c2471c2f7ec54fd82a35e38755dcaa
 
 build:
-  skip: true   #  [win]
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - yt = yt.utilities.command_line:run_main
 
@@ -18,9 +16,10 @@ requirements:
   build:
     - python
     - numpy x.x
-    - cython
-    - setuptools 
+    - cython >=0.24.0
+    - setuptools >=19.6
   run:
+    - setuptools
     - python
     - numpy x.x
     - h5py
