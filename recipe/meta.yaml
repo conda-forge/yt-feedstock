@@ -3,10 +3,11 @@ package:
   version: 3.3dev
 
 source:
-  hg_url: https://bitbucket.org/yt_analysis/yt
-  hg_tag: yt
+  url: https://bitbucket.org/yt_analysis/yt/get/dda861e88caf.zip
+  sha256: 1b6686938e06dc9346de84e90ff5aa63a4c2471c2f7ec54fd82a35e38755dcaa
 
 build:
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - yt = yt.utilities.command_line:run_main
