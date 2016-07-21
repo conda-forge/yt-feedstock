@@ -19,6 +19,7 @@ requirements:
     - cython >=0.24.0
     - setuptools >=19.6
   run:
+    - setuptools
     - python
     - numpy x.x
     - h5py
