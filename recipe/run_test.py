@@ -1,2 +1,2 @@
 import yt
-#yt.run_nose()
+yt.run_nose()
