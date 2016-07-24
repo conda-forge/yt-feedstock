@@ -1,4 +1,4 @@
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 
 package:
   name: yt
@@ -7,7 +7,7 @@ package:
 source:
   fn: yt-{{ version }}.tar.gz
   url: https://files.pythonhosted.org/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 537c67e85c8f5cc5530a1223a74d27eb7f11c459651903c3092c6a97b450d019
+  sha256: 01e3b3398d43b8eab698d55ba37ef3d701ea026b899c0940a1ee34b215e25a31
 
 build:
   number: 0
