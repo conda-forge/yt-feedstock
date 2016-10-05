@@ -10,8 +10,9 @@ source:
   sha256: 01e3b3398d43b8eab698d55ba37ef3d701ea026b899c0940a1ee34b215e25a31
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1
+  script: env EMBREE_DIR=$PREFIX python setup.py install --single-version-externally-managed --record=record.txt  # [not win]
+  script: python setup.py install --single-version-externally-managed --record=record.txt  # [win]
   entry_points:
     - yt = yt.utilities.command_line:run_main
 
@@ -21,6 +22,7 @@ requirements:
     - numpy x.x
     - cython >=0.24.0
     - setuptools >=19.6
+    - pyembree  # [not win]
   run:
     - setuptools
     - python
@@ -29,6 +31,7 @@ requirements:
     - sympy
     - matplotlib
     - ipython
+    - pyembree  # [not win]
 
 test:
   requires:
