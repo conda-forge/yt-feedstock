@@ -2,10 +2,11 @@
 # update the conda-forge.yaml and/or the recipe/meta.yaml.
 
 language: objective-c
+osx_image: xcode6.1
 
 env:
   matrix:
-    
+
     - CONDA_NPY=110  CONDA_PY=27
     - CONDA_NPY=111  CONDA_PY=27
     - CONDA_NPY=110  CONDA_PY=34
