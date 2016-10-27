@@ -7,7 +7,7 @@ package:
 
 source:
   fn: yt-{{ version }}.tar.gz
-  url: http://yt-project.org/sdist/yt-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/y/yt/yt-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
