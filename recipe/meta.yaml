@@ -1,4 +1,5 @@
-{% set version = "3.3.1" %}
+{% set version = "3.3.2" %}
+{% set sha256 = "a18e4cf498349804c64eec6509ec4d3a6beaa34ea63366543290c35774337f0e" %}
 
 package:
   name: yt
@@ -6,11 +7,11 @@ package:
 
 source:
   fn: yt-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 01e3b3398d43b8eab698d55ba37ef3d701ea026b899c0940a1ee34b215e25a31
+  url: https://yt-project.org/sdist/yt-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script: env EMBREE_DIR=$PREFIX python setup.py install --single-version-externally-managed --record=record.txt  # [not win]
   script: python setup.py install --single-version-externally-managed --record=record.txt  # [win]
   entry_points:
