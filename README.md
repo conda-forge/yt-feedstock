@@ -33,7 +33,6 @@ conda search yt --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
