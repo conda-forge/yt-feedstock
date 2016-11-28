@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   script: env EMBREE_DIR=$PREFIX python setup.py install --single-version-externally-managed --record=record.txt  # [not win]
   script: python setup.py install --single-version-externally-managed --record=record.txt  # [win]
   entry_points:
@@ -23,7 +23,7 @@ requirements:
     - numpy x.x
     - cython >=0.24.0
     - setuptools >=19.6
-    - pyembree  # [not win]
+    - pyembree  # [linux]
     - gcc  # [linux]
   run:
     - setuptools
@@ -33,7 +33,7 @@ requirements:
     - sympy
     - matplotlib
     - ipython
-    - pyembree  # [not win]
+    - pyembree  # [linux]
     # for openmp
     - libgcc  # [linux]
 
