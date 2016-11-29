@@ -11,6 +11,18 @@ Summary: Analysis and visualization toolkit for volumetric data
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/yt-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/yt-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/yt-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/yt-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/yt-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/yt-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/yt/badges/version.svg)](https://anaconda.org/conda-forge/yt)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/yt/badges/downloads.svg)](https://anaconda.org/conda-forge/yt)
+
 Installing yt
 =============
 
@@ -66,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/yt-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/yt-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/yt-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/yt-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/yt-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/yt-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/yt/badges/version.svg)](https://anaconda.org/conda-forge/yt)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/yt/badges/downloads.svg)](https://anaconda.org/conda-forge/yt)
 
 
 Updating yt-feedstock
