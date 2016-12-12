@@ -1,5 +1,5 @@
-{% set version = "3.3.2" %}
-{% set sha256 = "a18e4cf498349804c64eec6509ec4d3a6beaa34ea63366543290c35774337f0e" %}
+{% set version = "3.3.3" %}
+{% set sha256 = "edf6453927eee311d4b51afacb52cd5504b2b57cc6d3d92dab9c6bfaf6d883df" %}
 
 package:
   name: yt
@@ -7,7 +7,7 @@ package:
 
 source:
   fn: yt-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/source/y/yt/yt-{{ version }}.tar.gz
+  url: http://yt-project.org/sdist/yt-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
