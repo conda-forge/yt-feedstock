@@ -12,7 +12,7 @@ source:
 
 build:
   number: 2
-  script: env EMBREE_DIR=$PREFIX CFLAGS="$CFLAGS -Wno-cpp" python setup.py install --single-version-externally-managed --record=record.txt -q  # [not win]
+  script: env EMBREE_DIR=$PREFIX CFLAGS="$CFLAGS -Wno-cpp -fno-strict-aliasing" python setup.py install --single-version-externally-managed --record=record.txt -q  # [not win]
   script: python setup.py install --single-version-externally-managed --record=record.txt -q  # [win]
   entry_points:
     - yt = yt.utilities.command_line:run_main
