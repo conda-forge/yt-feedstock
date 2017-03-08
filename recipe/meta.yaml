@@ -1,5 +1,5 @@
-{% set version = "3.3.4" %}
-{% set sha256 = "64c109ba4baf5afc0e1bc276ed2e3de13f1c5ce85c6d8b4c60e9a47c54bf3bcb" %}
+{% set version = "3.3.5" %}
+{% set sha256 = "4d5c751b81b0daf6dcaff6ec0faefd97138c008019b52c043ab93403d71cedf6" %}
 
 package:
   name: yt
