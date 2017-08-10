@@ -1,5 +1,5 @@
-{% set version = "3.3.5" %}
-{% set sha256 = "4d5c751b81b0daf6dcaff6ec0faefd97138c008019b52c043ab93403d71cedf6" %}
+{% set version = "3.4.0" %}
+{% set sha256 = "de52057d1677473a83961d8a1119a9beae3121ec69a4a5469c65348a75096d4c" %}
 
 package:
   name: yt
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script: env EMBREE_DIR=$PREFIX python setup.py install --single-version-externally-managed --record=record.txt  # [not win]
   script: python setup.py install --single-version-externally-managed --record=record.txt  # [win]
   entry_points:
