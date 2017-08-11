@@ -12,8 +12,8 @@ source:
 
 build:
   number: 0
-  script: env EMBREE_DIR=$PREFIX python setup.py install --single-version-externally-managed --record=record.txt  # [not win]
-  script: python setup.py install --single-version-externally-managed --record=record.txt  # [win]
+  script: env EMBREE_DIR=$PREFIX python setup.py -q install --single-version-externally-managed --record=record.txt  # [not win]
+  script: python setup.py -q install --single-version-externally-managed --record=record.txt  # [win]
   entry_points:
     - yt = yt.utilities.command_line:run_main
 
