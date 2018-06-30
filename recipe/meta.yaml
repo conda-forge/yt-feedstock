@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - numpy
+    - numpy 1.11.*
     - cython >=0.24.0
     - setuptools >=19.6
   run:
@@ -33,7 +33,6 @@ requirements:
     - sympy
     - matplotlib
     - ipython
-    # for openmp
 
 test:
   requires:
