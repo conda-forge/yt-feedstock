@@ -43,7 +43,9 @@ test:
 
 about:
   home: http://yt-project.org/
-  license: BSD 3-clause
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
   summary: Analysis and visualization toolkit for volumetric data
 
 extra:
