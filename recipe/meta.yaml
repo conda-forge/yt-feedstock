@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py -q install --single-version-externally-managed --record=record.txt
   entry_points:
     - yt = yt.utilities.command_line:run_main
@@ -43,7 +43,8 @@ test:
 
 about:
   home: http://yt-project.org/
-  license: BSD 3-clause
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: COPYING.txt
   summary: Analysis and visualization toolkit for volumetric data
 
