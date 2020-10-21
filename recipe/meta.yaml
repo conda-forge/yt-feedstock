@@ -1,45 +1,45 @@
 {% set version = "3.6.0" %}
-{% set sha256 = "effb00536f19fd2bdc18f67dacd5550b82066a6adce5b928f27a01d7505109ec" %}
 
 package:
   name: yt
   version: {{ version }}
 
 source:
-  fn: yt-{{ version }}.tar.gz
-  url: http://yt-project.org/sdist/yt-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
+  sha256: effb00536f19fd2bdc18f67dacd5550b82066a6adce5b928f27a01d7505109ec
 
 build:
-  number: 1
-  script: python setup.py -q install --single-version-externally-managed --record=record.txt
+  number: 2
   entry_points:
     - yt = yt.utilities.command_line:run_main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
+    - pip
     - numpy
     - cython >=0.24.0
-    - setuptools >=19.6
   run:
-    - setuptools
     - python
+    - ipython >=1.0
+    # _png was removed around version 3 and that broke yt.
+    - matplotlib-base >=1.5.3,<3
+    - numpy >=1.10.4
+    - setuptools >=19.6
+    - sympy >=1.0
     - {{ pin_compatible('numpy') }}
-    - h5py
-    - sympy
-    - matplotlib-base
-    - ipython
 
 test:
-  requires:
-    - nose
-  commands:
-    - yt -h
   imports:
     - yt
+  commands:
+    - pip check
+    - yt --help
+  requires:
+    - pip
 
 about:
   home: http://yt-project.org/
