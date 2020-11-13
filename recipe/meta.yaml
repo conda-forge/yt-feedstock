@@ -1,4 +1,4 @@
-{% set version = "3.6.0" %}
+{% set version = "3.6.1" %}
 
 package:
   name: yt
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: effb00536f19fd2bdc18f67dacd5550b82066a6adce5b928f27a01d7505109ec
+  sha256: be454f9d05dcbe0623328b4df43a1bfd1f0925e516be97399710452931a19bb0
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
@@ -25,8 +25,7 @@ requirements:
   run:
     - python
     - ipython >=1.0
-    # _png was removed around version 3 and that broke yt.
-    - matplotlib-base >=1.5.3,<3
+    - matplotlib-base >=1.5.3
     - numpy >=1.10.4
     - setuptools >=19.6
     - sympy >=1.0
