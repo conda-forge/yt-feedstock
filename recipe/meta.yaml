@@ -9,7 +9,7 @@ source:
   sha256: be454f9d05dcbe0623328b4df43a1bfd1f0925e516be97399710452931a19bb0
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
