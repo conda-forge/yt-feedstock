@@ -311,4 +311,5 @@ Feedstock Maintainers
 
 * [@munkm](https://github.com/munkm/)
 * [@ngoldbaum](https://github.com/ngoldbaum/)
+* [@xarthisius](https://github.com/Xarthisius)
 
