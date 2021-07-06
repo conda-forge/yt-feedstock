@@ -27,9 +27,14 @@ requirements:
     - python
     - ipython >=1.0
     - matplotlib-base >=1.5.3
-    - numpy >=1.10.4
+    - numpy >=1.13.3
+    - packaging >=20.9
+    - pyyaml >=4.2b1
     - setuptools >=19.6
-    - sympy >=1.0
+    - sympy >=1.2
+    - toml >=0.10.2
+    - tqdm >=3.4.0
+    - unyt >=2.8.0
     - {{ pin_compatible('numpy') }}
 
 test:
