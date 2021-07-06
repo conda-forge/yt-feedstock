@@ -1,13 +1,17 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '8'
+- '9'
 cdt_name:
 - cos7
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+cxx_compiler:
+- gxx
+cxx_compiler_version:
+- '9'
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 numpy:
@@ -21,5 +25,7 @@ python:
 target_platform:
 - linux-ppc64le
 zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
 - - python
   - numpy
