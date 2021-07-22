@@ -15,7 +15,7 @@ build:
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: |
-    {{ PYTHON }} -c "import os; print(os.uname())"
+    {{ PYTHON }} -c "import platform; print(platform.uname())"
     {{ PYTHON }} -m pip install . -vv
   script_env:
     - OMP_NUM_THREADS=1
