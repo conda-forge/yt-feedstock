@@ -11,7 +11,7 @@ source:
     - patches/force_cythonize.patch
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
