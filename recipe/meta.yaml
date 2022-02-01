@@ -40,6 +40,7 @@ requirements:
     - toml >=0.10.2
     - tqdm >=3.4.0
     - unyt >=2.8.0
+    - cmyt
     - {{ pin_compatible('numpy') }}
 
 test:
