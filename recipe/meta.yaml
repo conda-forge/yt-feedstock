@@ -9,6 +9,7 @@ source:
   sha256: 76b238eef0fbbbea810dda4821331a9b03f74e5e2dda9997e401c685deec1631
   patches:
     - patches/force_cythonize.patch
+    - patches/allow_sympy19.patch
 
 build:
   number: 0
@@ -36,7 +37,7 @@ requirements:
     - packaging >=20.9
     - pyyaml >=4.2b1
     - setuptools >=19.6
-    - sympy !=1.9,>=1.2
+    - sympy >=1.2
     - toml >=0.10.2
     - tqdm >=3.4.0
     - unyt >=2.8.0
