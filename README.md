@@ -13,14 +13,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://travis-ci.com/conda-forge/yt-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/yt-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -303,6 +296,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@matthewturk](https://github.com/matthewturk/)
 * [@munkm](https://github.com/munkm/)
 * [@xarthisius](https://github.com/xarthisius/)
 

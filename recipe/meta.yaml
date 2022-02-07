@@ -1,4 +1,4 @@
-{% set version = "4.0.1" %}
+{% set version = "4.0.2" %}
 
 package:
   name: yt
@@ -6,12 +6,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 6219cbf971871320a13679a57722c0363e50db5e6d4d64ea9d197461b2a7f70f 
+  sha256: 76b238eef0fbbbea810dda4821331a9b03f74e5e2dda9997e401c685deec1631
   patches:
     - patches/force_cythonize.patch
+    - patches/allow_sympy19.patch
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
@@ -40,6 +41,7 @@ requirements:
     - toml >=0.10.2
     - tqdm >=3.4.0
     - unyt >=2.8.0
+    - cmyt
     - {{ pin_compatible('numpy') }}
 
 test:
