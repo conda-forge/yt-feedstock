@@ -1,4 +1,4 @@
-{% set version = "4.0.2" %}
+{% set version = "4.0.3" %}
 
 package:
   name: yt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 76b238eef0fbbbea810dda4821331a9b03f74e5e2dda9997e401c685deec1631
+  sha256: 3f697bd8027b8fd0fc9c3485c5cd9e4e23462ce81e6e7d72f1431222fc12ed51
   patches:
     - patches/force_cythonize.patch
     - patches/allow_sympy19.patch
