@@ -9,7 +9,6 @@ source:
   sha256: 3f697bd8027b8fd0fc9c3485c5cd9e4e23462ce81e6e7d72f1431222fc12ed51
   patches:
     - patches/force_cythonize.patch
-    - patches/allow_sympy19.patch
 
 build:
   number: 0
