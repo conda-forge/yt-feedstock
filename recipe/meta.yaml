@@ -17,6 +17,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   script_env:
     - OMP_NUM_THREADS=1
+    - MAX_BUILD_CORES=1
 
 requirements:
   build:
