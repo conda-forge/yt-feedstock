@@ -1,4 +1,4 @@
-{% set version = "4.0.2" %}
+{% set version = "4.0.3" %}
 
 package:
   name: yt
@@ -6,10 +6,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 76b238eef0fbbbea810dda4821331a9b03f74e5e2dda9997e401c685deec1631
+  sha256: 3f697bd8027b8fd0fc9c3485c5cd9e4e23462ce81e6e7d72f1431222fc12ed51
   patches:
     - patches/force_cythonize.patch
-    - patches/allow_sympy19.patch
 
 build:
   number: 0
@@ -18,6 +17,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   script_env:
     - OMP_NUM_THREADS=1
+    - MAX_BUILD_CORES=2
 
 requirements:
   build:
@@ -31,17 +31,17 @@ requirements:
   run:
     - python
     - ipython >=1.0
-    - matplotlib-base !=3.4.2,>=2.0.2,<3.6
+    - matplotlib-base !=3.4.2,>=2.1.0,<3.6
     - more-itertools >=8.4
-    - numpy >=1.10.4
+    - numpy >=1.13.3
     - packaging >=20.9
-    - pyyaml >=4.2b1
     - setuptools >=19.6
     - sympy >=1.2
-    - toml >=0.10.2
+    - tomli >=1.2.3
+    - tomli-w >=0.4.0
     - tqdm >=3.4.0
     - unyt >=2.8.0
-    - cmyt
+    - cmyt >=0.2.2
     - {{ pin_compatible('numpy') }}
 
 test:
