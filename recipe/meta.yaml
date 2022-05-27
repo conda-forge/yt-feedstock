@@ -1,4 +1,4 @@
-{% set version = "4.0.3" %}
+{% set version = "4.0.4" %}
 
 package:
   name: yt
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 3f697bd8027b8fd0fc9c3485c5cd9e4e23462ce81e6e7d72f1431222fc12ed51
+  sha256: 2cd58c3579efb88c3aefadc343ee6e399d893a2be5c60e61606a0fba6148b692
   patches:
     - patches/force_cythonize.patch
     - patches/crossc-openmp.patch  # [linux]
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
