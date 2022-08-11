@@ -10,7 +10,7 @@ source:
   patches:
     - patches/force_cythonize.patch
     - patches/crossc-openmp.patch  # [linux]
-    - patches/fix_shebang.patch
+    - patches/drop_iyt.patch  # [python_impl == 'pypy']
 
 build:
   number: 0
