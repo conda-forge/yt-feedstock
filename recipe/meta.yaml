@@ -10,6 +10,7 @@ source:
   patches:
     - patches/force_cythonize.patch
     - patches/crossc-openmp.patch  # [linux]
+    - patches/fix_shebang.patch
 
 build:
   number: 0
