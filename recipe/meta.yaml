@@ -14,7 +14,6 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<38]
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
@@ -42,6 +41,8 @@ requirements:
     - more-itertools >=8.4
     - numpy >=1.13.3
     - packaging >=20.9
+    - pillow >=6.2.0
+    - pyparsing >=2.0.2
     - setuptools >=19.6
     - sympy >=1.2
     - tomli >=1.2.3
@@ -50,6 +51,8 @@ requirements:
     - unyt >=2.8.0
     - cmyt >=0.2.2
     - {{ pin_compatible('numpy') }}
+    - importlib-metadata >=1.4.0  # [py<38]
+    - typing-extensions >=4.2.0  # [py<38]
 
 test:
   imports:
