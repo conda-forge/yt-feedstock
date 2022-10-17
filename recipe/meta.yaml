@@ -1,4 +1,4 @@
-{% set version = "4.1.0" %}
+{% set version = "4.1.1" %}
 
 package:
   name: yt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: b9bc7d011d3f825ff702ee8f9ac8d479dfb728d202333af738f24c8474c5c154
+  sha256: 01c69faac650c707f062dd77bc34c04c01d2d30cff7ad22e839aeaa1ae5e671d
   patches:
     - patches/force_cythonize.patch
     - patches/crossc-openmp.patch  # [linux]
