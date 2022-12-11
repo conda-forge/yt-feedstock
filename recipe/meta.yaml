@@ -13,7 +13,7 @@ source:
     - patches/drop_iyt.patch  # [python_impl == 'pypy']
 
 build:
-  number: 0
+  number: 1
   skip: true  # [python_impl == 'pypy']
   entry_points:
     - yt = yt.utilities.command_line:run_main
