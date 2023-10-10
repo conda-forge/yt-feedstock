@@ -1,4 +1,4 @@
-{% set version = "4.2.2" %}
+{% set version = "4.3.0" %}
 
 package:
   name: yt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 9a3a2ddf5ca30ca34b1c85465a70a0d4579d1fe834d07eaf9693b5ce7fdb9949
+  sha256: cdcab7c07d8c46fe87d94fcec4bbac750394aa40b88cb7381abc843dcdce30ee
   patches:
     - patches/force_cythonize.patch
     - patches/crossc-openmp.patch  # [linux]
@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [python_impl == 'pypy']
+  skip: true  # [py<39 or python_impl == 'pypy']
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
@@ -28,7 +28,6 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - libgomp                                # [linux]
-    - importlib-resources >=1.3              # [py<39]
     - ewah-bool-utils >=1.0.2                # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -36,8 +35,7 @@ requirements:
     - python
     - pip
     - numpy
-    - cython >=0.29.33,<3.0
-    - importlib-resources >=1.3              # [py<39]
+    - cython >=3.0.3,<3.1
     - ewah-bool-utils >=1.0.2
   run:
     - python
@@ -53,7 +51,6 @@ requirements:
     - cmyt >=1.1.2
     - {{ pin_compatible('numpy') }}
     - ewah-bool-utils >=1.0.2
-    - importlib-resources >=1.3  # [py<39]
     - typing-extensions >=4.1.0  # [py<311]
 
 test:
