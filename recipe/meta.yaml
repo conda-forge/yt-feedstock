@@ -30,8 +30,8 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - libgomp                                # [linux]
     - ewah-bool-utils >=1.0.2                # [build_platform != target_platform]
-    - {{ compiler("c") }}
     - {{ stdlib("c") }}
+    - {{ compiler("c") }}
     - {{ compiler("cxx") }}
   host:
     - python
