@@ -13,7 +13,7 @@ source:
     - patches/drop_iyt.patch  # [python_impl == 'pypy']
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39 or python_impl == 'pypy']
   entry_points:
     - yt = yt.utilities.command_line:run_main
@@ -30,8 +30,9 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - libgomp                                # [linux]
     - ewah-bool-utils >=1.0.2                # [build_platform != target_platform]
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
   host:
     - python
     - pip
@@ -50,7 +51,6 @@ requirements:
     - tqdm >=3.4.0
     - unyt >=2.9.2,<3.0
     - cmyt >=1.1.2
-    - {{ pin_compatible('numpy') }}
     - ewah-bool-utils >=1.0.2
     - typing-extensions >=4.1.0  # [py<311]
 
