@@ -39,7 +39,7 @@ requirements:
     - numpy
     - cython >=3.0.3,<3.1
     - ewah-bool-utils >=1.0.2
-    - setuptools >= 61.2
+    - setuptools >=61.2
   run:
     - python
     - ipywidgets >=8.0.0
