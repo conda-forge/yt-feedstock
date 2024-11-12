@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/y/yt/yt-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/y/yt/yt-{{ version }}.tar.gz
   sha256: 0e15df9cb21abe582f8128bf0705a3bc0f4805f97efd6b4f883073703941c0d5
   patches:
     - patches/force_cythonize.patch
