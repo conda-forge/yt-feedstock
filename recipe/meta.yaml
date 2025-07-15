@@ -1,4 +1,4 @@
-{% set version = "4.4.0" %}
+{% set version = "4.4.1" %}
 
 package:
   name: yt
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/y/yt/yt-{{ version }}.tar.gz
-  sha256: 0e15df9cb21abe582f8128bf0705a3bc0f4805f97efd6b4f883073703941c0d5
+  sha256: 2df36425b48321ca236ea638f64fbe834f5d3b47c948cd519a7b048686253c25
   patches:
     - patches/force_cythonize.patch
     - patches/crossc-openmp.patch  # [linux]
     - patches/drop_iyt.patch  # [python_impl == 'pypy']
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<310 or python_impl == 'pypy']
   entry_points:
     - yt = yt.utilities.command_line:run_main
@@ -24,7 +24,7 @@ build:
 
 requirements:
   build:
-    - cython                                 # [build_platform != target_platform]
+    - cython <3.1                            # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
