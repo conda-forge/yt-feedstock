@@ -13,17 +13,19 @@ source:
     - patches/drop_iyt.patch  # [python_impl == 'pypy']
 
 build:
-  number: 1
-  skip: true  # [py<310 or python_impl == 'pypy']
+  number: 2
+  python_version_independent: true  # [py>=311 and is_abi3]
   entry_points:
     - yt = yt.utilities.command_line:run_main
   script: {{ PYTHON }} -m pip install . -vv
   script_env:
     - OMP_NUM_THREADS=1
     - MAX_BUILD_CORES=2
+  skip: true  # [py>=312 and is_abi3]
 
 requirements:
   build:
+    - python-abi3                            # [py>=311 and is_abi3]
     - cython <3.1                            # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -61,8 +63,10 @@ test:
   commands:
     - pip check
     - yt --help
+    - abi3audit $SP_DIR/yt/*.abi3.so -s -v --assume-minimum-abi3 3.11  # [unix and py>=311 and is_abi3]
   requires:
     - pip
+    - abi3audit  # [py>=311 and is_abi3]
 
 about:
   home: http://yt-project.org/
