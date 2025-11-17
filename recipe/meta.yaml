@@ -21,6 +21,7 @@ build:
   script_env:
     - OMP_NUM_THREADS=1
     - MAX_BUILD_CORES=2
+    - YT_LIMITED_API=1
   skip: true  # [py>=312 and is_abi3]
 
 requirements:
