@@ -365,7 +365,10 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@cphyc](https://github.com/cphyc)
+* [@chrishavlin](https://github.com/chrishavlin)
 * [@matthewturk](https://github.com/matthewturk/)
 * [@munkm](https://github.com/munkm/)
+* [@neutrinoceros](https://github.com/...)
 * [@xarthisius](https://github.com/xarthisius/)
 
