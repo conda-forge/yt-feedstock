@@ -370,5 +370,4 @@ Feedstock Maintainers
 * [@matthewturk](https://github.com/matthewturk/)
 * [@munkm](https://github.com/munkm/)
 * [@neutrinoceros](https://github.com/...)
-* [@xarthisius](https://github.com/xarthisius/)
 
