@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/y/yt/yt-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/y/yt/yt-{{ version }}.tar.gz
   sha256: e0883a89c2543b436c3778f555edf253c71f252f744752dc1688f8524ad03b0b
   patches:
     - patches/force_cythonize.patch
@@ -13,7 +13,7 @@ source:
     - patches/drop_iyt.patch  # [python_impl == 'pypy']
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<310 or python_impl == 'pypy']
   entry_points:
     - yt = yt.utilities.command_line:run_main
