@@ -1,0 +1,96 @@
+schema_version: 1
+
+context:
+  version: "4.4.2"
+
+package:
+  name: yt
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/y/yt/yt-${{ version }}.tar.gz
+  sha256: e0883a89c2543b436c3778f555edf253c71f252f744752dc1688f8524ad03b0b
+  patches:
+    - patches/force_cythonize.patch
+    - if: linux
+      then: patches/crossc-openmp.patch
+    - if: python_impl == 'pypy'
+      then: patches/drop_iyt.patch
+
+build:
+  number: 1
+  skip: match(python, "<3.10") or python_impl == 'pypy'
+  script:
+    env:
+      OMP_NUM_THREADS: 1
+      MAX_BUILD_CORES: 2
+    content: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - yt = yt.utilities.command_line:run_main
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: cython <3.1
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: numpy
+    - if: linux
+      then: libgomp
+    - if: build_platform != target_platform
+      then: ewah-bool-utils >=1.0.2
+    - ${{ stdlib("c") }}
+    - ${{ compiler("c") }}
+    - ${{ compiler("cxx") }}
+  host:
+    - python
+    - pip
+    - numpy
+    - cython >=3.0.3,<3.1
+    - ewah-bool-utils >=1.0.2
+    - setuptools >=61.2
+  run:
+    - python
+    - ipywidgets >=8.0.0
+    - matplotlib-base !=3.4.2,>=3.2.0
+    - more-itertools >=8.4
+    - packaging >=20.9
+    - pillow >=6.2.1
+    - if: match(python, "<3.11")
+      then: tomli >=1.2.3
+    - tomli-w >=0.4.0
+    - tqdm >=3.4.0
+    - unyt >=2.9.2
+    - cmyt >=1.1.2
+    - ewah-bool-utils >=1.0.2
+    - if: match(python, "<3.11")
+      then: typing-extensions >=4.1.0
+
+tests:
+  - python:
+      imports:
+        - yt
+      pip_check: true
+  - requirements:
+      run:
+        - pip
+    script:
+      - yt --help
+
+about:
+  license: BSD-3-Clause
+  license_file: COPYING.txt
+  summary: Analysis and visualization toolkit for volumetric data
+  homepage: http://yt-project.org/
+
+extra:
+  recipe-maintainers:
+    - neutrinoceros
+    - cphyc
+    - chrishavlin
+    - matthewturk
+    - munkm
