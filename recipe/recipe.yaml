@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.4.2"
+  version: "4.4.4"
 
 package:
   name: yt
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/y/yt/yt-${{ version }}.tar.gz
-  sha256: e0883a89c2543b436c3778f555edf253c71f252f744752dc1688f8524ad03b0b
+  sha256: 4be5142ca9a7654d9ba63529a1456a6389e7e66685aa4013758ed8b254308452
   patches:
     - patches/force_cythonize.patch
     - if: linux
@@ -18,7 +18,7 @@ source:
       then: patches/drop_iyt.patch
 
 build:
-  number: 1
+  number: 0
   skip: match(python, "<3.10") or python_impl == 'pypy'
   script:
     env:
