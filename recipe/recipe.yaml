@@ -50,23 +50,22 @@ requirements:
     - python
     - pip
     - numpy
-    - cython >=3.0.3,<3.1
-    - ewah-bool-utils >=1.0.2
-    - setuptools >=61.2
+    - cython >=3.0.3
+    - ewah-bool-utils >=1.2.0,<2.0.0
+    - setuptools >=77.0.0
   run:
     - python
-    - ipywidgets >=8.0.0
-    - matplotlib-base !=3.4.2,>=3.2.0
+    - matplotlib-base >=3.5.0
     - more-itertools >=8.4
     - packaging >=20.9
-    - pillow >=6.2.1
+    - pillow >=8.3.2
     - if: match(python, "<3.11")
       then: tomli >=1.2.3
     - tomli-w >=0.4.0
     - tqdm >=3.4.0
     - unyt >=2.9.2
     - cmyt >=1.1.2
-    - ewah-bool-utils >=1.0.2
+    - ewah-bool-utils >=1.2.0,<2.0.0
     - if: match(python, "<3.11")
       then: typing-extensions >=4.1.0
 
