@@ -18,7 +18,7 @@ source:
       then: patches/drop_iyt.patch
 
 build:
-  number: 0
+  number: 1
   skip: match(python, "<3.10") or python_impl == 'pypy'
   script:
     env:
